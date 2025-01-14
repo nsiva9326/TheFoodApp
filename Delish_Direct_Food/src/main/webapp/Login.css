@@ -1,0 +1,150 @@
+@charset "UTF-8";
+
+    * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', Arial, Helvetica, sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, 
+                rgba(255,0,0,0.8) 0%,
+                rgba(255,154,0,0.8) 10%,
+                rgba(255,255,0,0.8) 20%,
+                rgba(0,255,0,0.8) 30%,
+                rgba(0,255,255,0.8) 40%,
+                rgba(0,0,255,0.8) 50%,
+                rgba(154,0,255,0.8) 60%,
+                rgba(255,0,255,0.8) 70%,
+                rgba(255,0,154,0.8) 80%,
+                rgba(255,0,0,0.8) 90%);
+            background-size: 300% 300%;
+            animation: gradientAnimation 15s ease infinite;
+            backdrop-filter: blur(5px);
+            overflow: hidden;
+        }
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        .form-box {
+            width: 400px;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 0.5s ease;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .form-box::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: rgba(255,255,255,0.1);
+            top: -50%;
+            left: -50%;
+            z-index: -1;
+            transform: rotate(45deg);
+        }
+        h2 {
+            font-size: 2.5em;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+        .inputbox {
+            position: relative;
+            margin: 30px 0;
+            width: 100%;
+            border-bottom: 2px solid #fff;
+        }
+        .inputbox label {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            color: #fff;
+            font-size: 1em;
+            pointer-events: none;
+            transition: 0.5s;
+        }
+        .inputbox input {
+            width: 100%;
+            height: 50px;
+            background: transparent;
+            border: none;
+            outline: none;
+            font-size: 1em;
+            padding: 0 10px 0 30px;
+            color: #fff;
+        }
+        .inputbox ion-icon {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #fff;
+            font-size: 1.2em;
+        }
+        .inputbox input:focus ~ label,
+        .inputbox input:valid ~ label {
+            top: -20px;
+            left: 5px;
+            color: #ff9800;
+            font-size: 0.8em;
+        }
+        button {
+            width: 100%;
+            height: 50px;
+            border-radius: 25px;
+            background: linear-gradient(135deg, #ff9800 0%, #ff6400 100%);
+            border: none;
+            outline: none;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+            color: #fff;
+            transition: background-color 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        button:hover {
+            background-color: #e58900;
+        }
+        .register {
+            font-size: 0.9em;
+            color: #fff;
+            text-align: center;
+            margin-top: 25px;
+        }
+        .register p a {
+            text-decoration: none;
+            color: #ff9800;
+            font-weight: 600;
+        }
+        .register p a:hover {
+            text-decoration: underline;
+        }
